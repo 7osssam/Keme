@@ -34,11 +34,13 @@ class _HomeScreenState extends State<HomeScreen> {
           NavBarItem(iconData: Icons.add, size: 60),
           NavBarItem(iconData: Icons.settings, size: 30),
         ],
+
         onTap: (index) {
           setState(() {
            currentIndex = index.toInt();
           });
         },
+      
       ),
       // bottomNavigationBar: BottomNavigationBar(
       //   currentIndex: currentIndex,
@@ -72,7 +74,3 @@ class _HomeScreenState extends State<HomeScreen> {
     SettingTab(),
   ];
 }
-
-
-
-
