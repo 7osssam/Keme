@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.routeName: (buildContext) => HomeScreen(),
         PlaceDetails.routeName: (buildContext) => PlaceDetails(),
-        QRViewExample.routeName: (buildContext) => FilterTab(),
+        //QRViewExample.routeName: (buildContext) => FilterTab(),
         ArTourTab.routeName: (buildContext) => ArTourTab(),
         Place360Degree.routeName: (buildContext) => Place360Degree(),
         SettingTab.routeName: (buildContext) => SettingTab(),
