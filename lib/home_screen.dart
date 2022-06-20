@@ -1,11 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:keme/places_tab.dart';
-import 'package:keme/profile_tab.dart';
 import 'package:keme/setting_tab.dart';
 import 'package:navigation_action_bar/navigation_action_bar.dart';
-
-import 'camera_tab.dart';
 import 'map_tab.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -28,16 +24,14 @@ class _HomeScreenState extends State<HomeScreen> {
         scaffoldColor: Color.fromRGBO(34, 33, 38, 1),
         index: 0,
         subItems: [
-          NavBarItem(iconData: Icons.home, size: 25),
+          NavBarItem(iconData: Icons.home, size: 25,),
           NavBarItem(iconData: Icons.search, size: 25),
           NavBarItem(iconData: Icons.camera_alt, size: 25),
         ],
-        mainIndex: 2,
+        mainIndex: 1,
         items: [
           NavBarItem(iconData: Icons.place_sharp, size: 30),
-          NavBarItem(iconData: Icons.map_outlined, size: 30),
           NavBarItem(iconData: Icons.add, size: 60),
-          NavBarItem(iconData: Icons.person, size: 30),
           NavBarItem(iconData: Icons.settings, size: 30),
         ],
         onTap: (index) {
@@ -75,8 +69,6 @@ class _HomeScreenState extends State<HomeScreen> {
   var tabs = [
     PlacesTab(),
     MapTab(),
-    CameraTab(),
-    ProfileTab(),
     SettingTab(),
   ];
 }
