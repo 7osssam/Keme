@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         scaffoldColor: Color.fromRGBO(34, 33, 38, 1),
         index: 0,
         subItems: [
-          NavBarItem(iconData: Icons.home, size: 25,),
+          NavBarItem(iconData: Icons.home_max, size: 25),
           NavBarItem(iconData: Icons.search, size: 25),
           NavBarItem(iconData: Icons.camera_alt, size: 25),
         ],
