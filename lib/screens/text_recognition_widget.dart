@@ -37,9 +37,9 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
             children: [
               Container(
                 height: 280,
-                width: 250,
-                margin: const EdgeInsets.only(top: 70),
-                padding: const EdgeInsets.only(left: 28, bottom: 5, right: 18),
+                width: 305,
+                margin: const EdgeInsets.only(top: 50),
+                padding: const EdgeInsets.only(left: 28, bottom: 10, right: 18),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SingleChildScrollView(
@@ -101,7 +101,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
                                       offset: const Offset(0, 8),
                                       customButton: Icon(
                                         Icons.g_translate_outlined,
-                                        color: Colors.blueAccent,
+                                        color: Colors.amber,
                                         size: 25,
                                       ),
                                     ),
@@ -126,11 +126,11 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
                   ),
                 ),
                 decoration: const BoxDecoration(
-                  image: DecorationImage(image: AssetImage('assets/images/note.jpg'), fit: BoxFit.cover),
+                  image: DecorationImage(image: AssetImage('assets/images/note.png'), fit: BoxFit.cover),
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(top: 20, right: 140),
+                margin: const EdgeInsets.only(top: 15, right: 40,left: 40, bottom: 10),
                 child: Stack(
                   children: [
                     Stack(
@@ -156,7 +156,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
                                     image!,
                                     width: 140,
                                     height: 192,
-                                    fit: BoxFit.fill,
+                                    fit: BoxFit.cover,
                                   )
                                 : Container(
                                     width: 240,
@@ -164,7 +164,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
                                     child: const Icon(
                                       Icons.camera_enhance_sharp,
                                       size: 100,
-                                      color: Colors.grey,
+                                      color: Colors.amber,
                                     ),
                                   )),
                       ),
@@ -173,7 +173,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -207,7 +207,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
       );
 
   Widget buildImage() => Container(
-        child: image != null ? Image.file(image!) : Icon(Icons.photo, size: 80, color: Colors.black),
+        child: image != null ? Image.file(image!) : Icon(Icons.photo, size: 80, color: Colors.white),
       );
 
   Future pickImage() async {

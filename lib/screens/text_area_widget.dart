@@ -27,7 +27,7 @@ class TextAreaWidget extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           IconButton(
-            icon: Icon(Icons.copy, color: Colors.black),
+            icon: Icon(Icons.copy, color: Colors.white),
             color: Colors.grey[200],
             onPressed: onClickedCopy,
           ),

@@ -3,6 +3,7 @@ import 'package:keme/places_tab.dart';
 import 'package:keme/setting_tab.dart';
 import 'package:navigation_action_bar/navigation_action_bar.dart';
 import 'map_tab.dart';
+import 'screens/main_ocr.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'HomeScreen';
@@ -71,6 +72,6 @@ class _HomeScreenState extends State<HomeScreen> {
   var tabs = [
     PlacesTab(),
     MapTab(),
-    SettingTab(),
+    MainOcr(),
   ];
 }
