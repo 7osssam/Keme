@@ -35,3 +35,16 @@ class MyApp extends StatelessWidget {
   }
 }
 //hi hos
+
+//create an app bar 
+//create a bottom navigation bar
+//create a tab bar
+
+AppBar createAppBar(BuildContext context) {
+  return AppBar(
+    title: Text("Keme"),
+    centerTitle: true,
+    backgroundColor: MyThemeData.DarkTheme.scaffoldBackgroundColor,
+    elevation: 0,
+  );
+}   
