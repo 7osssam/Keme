@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "419927989089",
-    "project_id": "keme-9dda0",
-    "storage_bucket": "keme-9dda0.appspot.com"
+    "project_number": "262501676186",
+    "project_id": "keme-cc109",
+    "storage_bucket": "keme-cc109.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:419927989089:android:0b38e324e43b3bc6240320",
+        "mobilesdk_app_id": "1:262501676186:android:a6b873c86e548f7169db23",
         "android_client_info": {
           "package_name": "com.example.keme"
         }
       },
       "oauth_client": [
         {
-          "client_id": "419927989089-kgg504r8fa11v72jjv34orph55g8elng.apps.googleusercontent.com",
+          "client_id": "262501676186-tjdv668k03oumoa294503er52pnu9jei.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDwOCFUxJeORCa0u3YAp6jc1MMvzx6X1-M"
+          "current_key": "AIzaSyABK_eqsSF8LuqaAknO4hp76W9MnC9d93g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "419927989089-kgg504r8fa11v72jjv34orph55g8elng.apps.googleusercontent.com",
+              "client_id": "262501676186-tjdv668k03oumoa294503er52pnu9jei.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
