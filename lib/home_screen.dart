@@ -26,6 +26,10 @@ class _HomeScreenState extends State<HomeScreen> {
         index: 0,
         subItems: [
           NavBarItem(iconData: Icons.home_max, size: 25),
+          NavBarItem(
+            iconData: Icons.home,
+            size: 25,
+          ),
           NavBarItem(iconData: Icons.search, size: 25),
           NavBarItem(iconData: Icons.camera_alt, size: 25),
         ],
@@ -72,6 +76,6 @@ class _HomeScreenState extends State<HomeScreen> {
   var tabs = [
     PlacesTab(),
     MapTab(),
-    MainOcr(),
+    SettingTab(),
   ];
 }

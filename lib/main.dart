@@ -1,10 +1,14 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:keme/qr_tab.dart';
 import 'package:keme/my_theme.dart';
 import 'package:keme/place_360_degree.dart';
 import 'package:keme/place_details.dart';
+import 'package:keme/reset_password.dart';
 import 'package:keme/setting_tab.dart';
+import 'package:keme/signin_screen.dart';
+import 'package:keme/signup_screen.dart';
 import 'ar_tour_tab.dart';
 import 'home_screen.dart';
 
@@ -20,8 +24,14 @@ class MyApp extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      home: (FirebaseAuth.instance.currentUser != null)
+          ? HomeScreen()
+          : SignInScreen(),
       title: "Keme",
       routes: {
+        SignInScreen.routeName:(buildContext)=>SignInScreen(),
+        SignUpScreen.routeName:(buildContext)=>SignUpScreen(),
+        ResetPassword.routeName:(buildContext)=>ResetPassword(),
         HomeScreen.routeName: (buildContext) => HomeScreen(),
         PlaceDetails.routeName: (buildContext) => PlaceDetails(),
         //QRViewExample.routeName: (buildContext) => FilterTab(),
@@ -29,7 +39,7 @@ class MyApp extends StatelessWidget {
         Place360Degree.routeName: (buildContext) => Place360Degree(),
         SettingTab.routeName: (buildContext) => SettingTab(),
       },
-      initialRoute: HomeScreen.routeName,
+     // initialRoute: SignInScreen  .routeName,
       theme: MyThemeData.DarkTheme,
     );
   }
