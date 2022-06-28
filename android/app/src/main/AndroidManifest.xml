@@ -2,7 +2,6 @@
     package="com.example.keme">
     <!-- Always include this permission -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <!-- Include only if your app benefits from precise location access. -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
    <application
@@ -11,7 +10,7 @@
         android:icon="@mipmap/ic_launcher">
 
        <meta-data android:name="com.google.android.geo.API_KEY"
-           android:value="AIzaSyCWTdCjj3pHl6kAux3NHrqhtGNLzX6w8xo"/>
+           android:value="AIzaSyASflcbTM5YNpmmI7q4bBD5poBxG6gbwcE"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

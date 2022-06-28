@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:keme/ar_tour_tab.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:keme/places_tab.dart';
+import 'package:keme/qr_tab.dart';
+import 'package:keme/signin_screen.dart';
 import 'ar_tour_tab.dart';
-import 'package:keme/setting_tab.dart';
 import 'map_tab.dart';
 import 'screens/main_ocr.dart';
 import 'qr_tab.dart';
@@ -10,30 +12,29 @@ import 'qr_tab.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'HomeScreen';
 
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
-  int _page = 0;
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
-        body: tabs[currentIndex], 
+        drawer: NavigationDrawer(),
+        body: tabs[currentIndex],
         bottomNavigationBar: CurvedNavigationBar(
           key: _bottomNavigationKey,
           index: 0,
           height: 60.0,
           items: <Widget>[
-            Icon(Icons.add, size: 30),
-            Icon(Icons.list, size: 30),
-            Icon(Icons.compare_arrows, size: 30),
-            Icon(Icons.call_split, size: 30),
-            Icon(Icons.perm_identity, size: 30),
+            Icon(Icons.home_outlined, size: 30),
+            Icon(Icons.map, size: 30),
+            Icon(Icons.qr_code_scanner, size: 30),
+            Icon(Icons.find_in_page, size: 30),
+            Icon(Icons.place, size: 30),
           ],
           color: Colors.white,
           buttonBackgroundColor: Colors.white,
@@ -43,79 +44,86 @@ class _HomeScreenState extends State<HomeScreen> {
           onTap: (index) {
             currentIndex = index;
             setState(() {}
-          
+
             );
           },
           letIndexChange: (index) => true,
         ),
-        
+
       );
-=======
-      body: tabs[currentIndex],
-      bottomNavigationBar: NavigationActionBar(
-        backgroundColor: Color.fromRGBO(34, 33, 38, 1),
-        context: context,
-        scaffoldColor: Color.fromRGBO(34, 33, 38, 1),
-        index: 0,
-        subItems: [
-          NavBarItem(iconData: Icons.home_max, size: 25),
-          NavBarItem(
-            iconData: Icons.home,
-            size: 25,
-          ),
-          NavBarItem(iconData: Icons.search, size: 25),
-          NavBarItem(iconData: Icons.camera_alt, size: 25),
-        ],
-        mainIndex: 1,
-        items: [
-          NavBarItem(iconData: Icons.place_sharp, size: 30),
-          NavBarItem(iconData: Icons.add, size: 60),
-          NavBarItem(iconData: Icons.settings, size: 30),
-        ],
 
-        onTap: (index) {
-          setState(() {
-           currentIndex = index.toInt();
-          });
-        },
-      
-      ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: currentIndex,
-      //   onTap: (index) {
-      //     currentIndex = index;
-      //     setState(() {});
-      //   },
-      //   items: const [
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.place, color: Colors.orangeAccent,),
-      //         label: "Places"),
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.map_outlined, color: Colors.orangeAccent),
-      //         label: "Map"),
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.camera, color: Colors.orangeAccent),
-      //         label: "Camera"),
-      //     BottomNavigationBarItem(
-      //         icon: Icon(Icons.settings, color: Colors.orangeAccent),
-      //         label: "Setting"),
-      //   ],
-      // ),
-
-    );
->>>>>>> ee61022648b5c1ec2525fd8f8895ec7d11c61b22
   }
 
 
   var tabs = [
     PlacesTab(),
     MapTab(),
-<<<<<<< HEAD
+    ScanScreen(),
     MainOcr(),
     ArTourTab(),
-    ScanScreen(),
-=======
-    SettingTab(),
->>>>>>> ee61022648b5c1ec2525fd8f8895ec7d11c61b22
+
   ];
+}
+class NavigationDrawer extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) =>Drawer(
+    child: SingleChildScrollView(
+      child: Column(
+        children: [
+          buildHeader(context),
+          buildMenuItems(context),
+        ],
+      ),
+    ),
+  );
+
+  Widget buildHeader(BuildContext context)=> Container();
+
+  Widget buildMenuItems(BuildContext context)=> Column(
+    children: [
+      ListTile(
+        leading:Icon(Icons.home_outlined),
+        title: Text('Home'),
+        onTap: (){
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>PlacesTab()));
+        },
+      ),
+      ListTile(
+        leading:Icon(Icons.map),
+        title: Text('Map'),
+        onTap: (){
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>MapTab()));
+        },
+      ),
+      ListTile(
+        leading:Icon(Icons.qr_code_scanner),
+        title: Text('Scan Qr'),
+        onTap: (){
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>ScanScreen()));
+        },
+      ),
+      ListTile(
+        leading:Icon(Icons.find_in_page),
+        title: Text('Scan Photo'),
+        onTap: (){
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>MainOcr()));
+        },
+      ),
+      ListTile(
+        leading:Icon(Icons.place),
+        title: Text('Tour'),
+        onTap: (){
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>ArTourTab()));
+        },
+      ),
+      ListTile(
+        leading:Icon(Icons.logout,color: Colors.red,),
+        title: Text('Logout'),
+        onTap: (){
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>SignInScreen()));
+        },
+      ),
+    ],
+  );
 }

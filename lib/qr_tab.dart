@@ -7,11 +7,7 @@ class ScanScreen extends StatefulWidget {
 }
 
 class _ScanScreenState extends State<ScanScreen> {
-<<<<<<< HEAD
   var qrstr = "";
-=======
-  var qrstr = "let's Scan it";
->>>>>>> ee61022648b5c1ec2525fd8f8895ec7d11c61b22
   var height,width;
   var scanArea ;
   @override
@@ -21,22 +17,26 @@ class _ScanScreenState extends State<ScanScreen> {
         ? 200.0
         : 300.0;
     return Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-<<<<<<< HEAD
-              Text(qrstr,style: TextStyle(color: Colors.white,fontSize: 24),),
-=======
-              Text(qrstr,style: TextStyle(color: Colors.black,fontSize: 24),),
->>>>>>> ee61022648b5c1ec2525fd8f8895ec7d11c61b22
-              ElevatedButton(style: ElevatedButton.styleFrom(
-                primary: Colors.orangeAccent, // Background color
-              ),onPressed: scanQr, child:
-              Text(('Scan qr'))),
-              SizedBox(height: scanArea,)
-            ],
+        body: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(
+                    'assets/images/back.jpg',
+                  ),
+                  fit: BoxFit.cover)),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(qrstr,style: TextStyle(color: Colors.white,fontSize: 24),),
+                ElevatedButton(style: ElevatedButton.styleFrom(
+                  primary: Colors.orangeAccent, // Background color
+                ),onPressed: scanQr, child:
+                Text(('Scan qr'))),
+              //  SizedBox(height: scanArea,)
+              ],
+            ),
           ),
         )
     );
@@ -56,8 +56,4 @@ class _ScanScreenState extends State<ScanScreen> {
       });
     }
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> ee61022648b5c1ec2525fd8f8895ec7d11c61b22
