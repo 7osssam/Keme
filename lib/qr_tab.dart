@@ -25,17 +25,20 @@ class _ScanScreenState extends State<ScanScreen> {
                   ),
                   fit: BoxFit.cover)),
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(qrstr,style: TextStyle(color: Colors.white,fontSize: 24),),
-                ElevatedButton(style: ElevatedButton.styleFrom(
-                  primary: Colors.orangeAccent, // Background color
-                ),onPressed: scanQr, child:
-                Text(('Scan qr'))),
-              //  SizedBox(height: scanArea,)
-              ],
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(qrstr,style: TextStyle(color: Colors.white,fontSize: 24),),
+                  ElevatedButton(style: ElevatedButton.styleFrom(
+                    primary: Colors.orangeAccent, // Background color
+                  ),onPressed: scanQr, child:
+                  Text(('Scan qr'))),
+                //  SizedBox(height: scanArea,)
+                ],
+              ),
             ),
           ),
         )
