@@ -5,6 +5,7 @@ import 'package:keme/ar_tour_tab.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:keme/places_tab.dart';
 import 'package:keme/qr_tab.dart';
+import 'package:keme/report_bugs.dart';
 import 'package:keme/signin_screen.dart';
 import 'ar_tour_tab.dart';
 import 'map_tab.dart';
@@ -51,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 leading:Icon(Icons.report_outlined,color: Colors.white,),
                 title: Text('Rebort Bugs',style: TextStyle(color: Colors.white),),
                 onTap: (){
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomeScreen()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ReportBugs()));
                 },
               ),
               ListTile(

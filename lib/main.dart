@@ -1,12 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:keme/qr_tab.dart';
 import 'package:keme/my_theme.dart';
 import 'package:keme/place_360_degree.dart';
 import 'package:keme/place_details.dart';
+import 'package:keme/report_bugs.dart';
 import 'package:keme/reset_password.dart';
-import 'package:keme/setting_tab.dart';
 import 'package:keme/signin_screen.dart';
 import 'package:keme/signup_screen.dart';
 import 'ar_tour_tab.dart';
@@ -34,27 +33,11 @@ class MyApp extends StatelessWidget {
         ResetPassword.routeName:(buildContext)=>ResetPassword(),
         HomeScreen.routeName: (buildContext) => HomeScreen(),
         PlaceDetails.routeName: (buildContext) => PlaceDetails(),
-        //QRViewExample.routeName: (buildContext) => FilterTab(),
         ArTourTab.routeName: (buildContext) => ArTourTab(),
+        ReportBugs.routeName: (buildContext) => ReportBugs(),
         Place360Degree.routeName: (buildContext) => Place360Degree(),
-        SettingTab.routeName: (buildContext) => SettingTab(),
       },
-     // initialRoute: SignInScreen  .routeName,
       theme: MyThemeData.DarkTheme,
     );
   }
 }
-//hi hos
-
-//create an app bar 
-//create a bottom navigation bar
-//create a tab bar
-
-AppBar createAppBar(BuildContext context) {
-  return AppBar(
-    title: Text("Keme"),
-    centerTitle: true,
-    backgroundColor: MyThemeData.DarkTheme.scaffoldBackgroundColor,
-    elevation: 0,
-  );
-}   

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'place_widget.dart';
 
+
 class PlacesTab extends StatelessWidget {
 
   @override
@@ -10,6 +11,11 @@ class PlacesTab extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Row(
+              children: [
+                PlaceWidget("Must Museum", "6 October", "assets/images/Must Musuem.jpg"),
+              ],
+            ),
             Row(
               children: [
                 PlaceWidget("Pyramids", "Giza", "assets/images/Pyramids.jpg"),
