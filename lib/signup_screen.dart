@@ -5,6 +5,7 @@ import 'package:keme/reusable_widgets/reusable_widget.dart';
 
 class SignUpScreen extends StatefulWidget {
   static const String routeName = 'Sign_up_screen';
+
   @override
   _SignUpScreenState createState() => _SignUpScreenState();
 }
@@ -13,7 +14,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _emailTextController = TextEditingController();
   TextEditingController _userNameTextController = TextEditingController();
-  String message='';
+  String message = '';
+  bool obsecureText = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,22 +38,105 @@ class _SignUpScreenState extends State<SignUpScreen> {
             padding: EdgeInsets.fromLTRB(20, 120, 20, 0),
             child: Column(
               children: <Widget>[
-                Image.asset("assets/images/logo.png",width: 200,height: 200,),
+                Image.asset(
+                  "assets/images/logo.png",
+                  width: 200,
+                  height: 200,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                TextField(
+                  controller: _userNameTextController,
+                  enableSuggestions: obsecureText,
+                  autocorrect: obsecureText,
+                  cursorColor: Colors.white,
+                  style: TextStyle(
+                      color: Colors.white.withOpacity(0.9), fontSize: 16),
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.person_outline,
+                      color: Colors.white70,
+                    ),
+                    labelText: "UserName",
+                    labelStyle: TextStyle(
+                        color: Colors.white.withOpacity(0.9), fontSize: 16),
+                    filled: true,
+                    isDense: true,
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                    fillColor: Colors.white.withOpacity(0.3),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                        borderSide: const BorderSide(
+                            width: 0, style: BorderStyle.none)),
+                  ),
+                ),
                 const SizedBox(
                   height: 20,
                 ),
-                reusableTextField("Enter UserName", Icons.person_outline, false,
-                    _userNameTextController),
+                TextField(
+                  controller: _emailTextController,
+                  enableSuggestions: obsecureText,
+                  autocorrect: obsecureText,
+                  cursorColor: Colors.white,
+                  style: TextStyle(
+                      color: Colors.white.withOpacity(0.9), fontSize: 16),
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.person_outline,
+                      color: Colors.white70,
+                    ),
+                    labelText: "Email",
+                    labelStyle: TextStyle(
+                        color: Colors.white.withOpacity(0.9), fontSize: 16),
+                    filled: true,
+                    isDense: true,
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                    fillColor: Colors.white.withOpacity(0.3),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                        borderSide: const BorderSide(
+                            width: 0, style: BorderStyle.none)),
+                  ),
+                ),
                 const SizedBox(
                   height: 20,
                 ),
-                reusableTextField("Enter Email Id", Icons.person_outline, false,
-                    _emailTextController),
-                const SizedBox(
-                  height: 20,
+                TextField(
+                  controller: _passwordTextController,
+                  cursorColor: Colors.white,
+                  style: TextStyle(
+                      color: Colors.white.withOpacity(0.9), fontSize: 16),
+                  obscureText: obsecureText,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.lock_outline,
+                      color: Colors.white70,
+                    ),
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          obsecureText = !obsecureText;
+                        });
+                      },
+                      child: Icon(
+                        obsecureText ? Icons.visibility : Icons.visibility_off,
+                        color: Colors.white70,
+                      ),
+                    ),
+                    labelText: "Password",
+                    labelStyle: TextStyle(
+                        color: Colors.white.withOpacity(0.9), fontSize: 16),
+                    filled: true,
+                    isDense: true,
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                    fillColor: Colors.white.withOpacity(0.3),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                        borderSide: const BorderSide(
+                            width: 0, style: BorderStyle.none)),
+                  ),
                 ),
-                reusableTextField("Enter Password", Icons.lock_outlined, true,
-                    _passwordTextController),
                 const SizedBox(
                   height: 20,
                 ),
@@ -64,14 +150,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomeScreen()));
                   }).onError((error, stackTrace) {
-                    message=error.toString();
+                    message = error.toString();
                     showDialog(
                         context: context,
                         builder: (_) => AlertDialog(
-                          content: Row(
-                            children: [Expanded(child: Text(message))],
-                          ),
-                        ));
+                              content: Row(
+                                children: [Expanded(child: Text(message))],
+                              ),
+                            ));
                     print(message);
                   });
                 })

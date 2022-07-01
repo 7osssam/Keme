@@ -16,13 +16,14 @@ class _SignInScreenState extends State<SignInScreen> {
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _emailTextController = TextEditingController();
   String message = '';
+  bool obsecureText=true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff212126),
       appBar: AppBar(
-        title: Text("Keme"),
+        title: Text("Keme",style: TextStyle(fontSize: 20),),
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -38,13 +39,62 @@ class _SignInScreenState extends State<SignInScreen> {
                 width: 200,
                 height: 200,
               ),
-              reusableTextField("Enter UserName", Icons.person_outline, false,
-                  _emailTextController),
+          SizedBox(height: 30,),
+          TextField(
+            controller: _emailTextController,
+            enableSuggestions: obsecureText,
+            autocorrect: obsecureText,
+            cursorColor: Colors.white,
+            style: TextStyle(color: Colors.white.withOpacity(0.9),fontSize: 16),
+            decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.person_outline,
+                color: Colors.white70,
+              ),
+              labelText: "Email",
+              labelStyle: TextStyle(color: Colors.white.withOpacity(0.9),fontSize: 16),
+              filled: true,
+              isDense: true,
+              floatingLabelBehavior: FloatingLabelBehavior.never,
+              fillColor: Colors.white.withOpacity(0.3),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                  borderSide: const BorderSide(width: 0, style: BorderStyle.none)),
+            ),
+          ),
               const SizedBox(
                 height: 20,
               ),
-              reusableTextField("Enter Password", Icons.lock_outline, true,
-                  _passwordTextController),
+              TextField(
+                controller: _passwordTextController,
+                cursorColor: Colors.white,
+                style: TextStyle(color: Colors.white.withOpacity(0.9),fontSize: 16),
+                obscureText: obsecureText,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.lock_outline,
+                    color: Colors.white70,
+                  ),
+                  suffixIcon:GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        obsecureText=!obsecureText;
+                      }) ;
+                    },
+                    child: Icon(obsecureText? Icons.visibility: Icons.visibility_off,color: Colors.white70,),
+
+                  ) ,
+                  labelText: "Password",
+                  labelStyle: TextStyle(color: Colors.white.withOpacity(0.9),fontSize: 16),
+                  filled: true,
+                  isDense: true,
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  fillColor: Colors.white.withOpacity(0.3),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                      borderSide: const BorderSide(width: 0, style: BorderStyle.none)),
+                ),
+              ),
               const SizedBox(
                 height: 5,
               ),

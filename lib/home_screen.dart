@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:keme/ar_tour_tab.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:keme/places_tab.dart';
@@ -11,19 +13,91 @@ import 'qr_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'HomeScreen';
-
-
+  final FirebaseAuth auth = FirebaseAuth.instance;
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  //signout function
+  signOut() async {
+    await auth.signOut();
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => SignInScreen()));
+  }
+  touristPolice() async{
+    const number = '0225315454'; //set the number here
+    bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: NavigationDrawer(),
+      appBar: AppBar(title: Text("Keme",style: Theme.of(context).textTheme.subtitle1,)),
+        drawer: Drawer(
+          backgroundColor: Color(0xff212126),
+          child: ListView(
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.orangeAccent,
+                ),
+                child: Text('Drawer Header'),
+              ),
+              ListTile(
+                leading:Icon(Icons.home_outlined,color: Colors.white,),
+                title: Text('Home',style: TextStyle(color: Colors.white),),
+                onTap: (){
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomeScreen()));
+                },
+              ),
+              ListTile(
+                leading:Icon(Icons.map,color: Colors.white,),
+                title: Text('Map',style: TextStyle(color: Colors.white),),
+                onTap: (){
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomeScreen()));
+                },
+              ),
+              ListTile(
+                leading:Icon(Icons.qr_code_scanner,color: Colors.white,),
+                title: Text('Scan Qr',style: TextStyle(color: Colors.white),),
+                onTap: (){
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomeScreen()));
+                },
+              ),
+              ListTile(
+                leading:Icon(Icons.find_in_page,color: Colors.white,),
+                title: Text('Scan Photo',style: TextStyle(color: Colors.white),),
+                onTap: (){
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomeScreen()));
+                },
+              ),
+              ListTile(
+                leading:Icon(Icons.place,color: Colors.white,),
+                title: Text('Tour',style: TextStyle(color: Colors.white),),
+                onTap: (){
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomeScreen()));
+                },
+              ),
+              ListTile(
+                leading:Icon(Icons.call,color: Colors.white,),
+                title: Text('Tourist Police',style: TextStyle(color: Colors.white),),
+                onTap: (){
+                  touristPolice();
+                },
+              ),
+              ListTile(
+                leading:Icon(Icons.logout,color: Colors.red,),
+                title: Text('Logout',style: TextStyle(color: Colors.white),),
+                onTap: (){
+                  signOut();
+                },
+              ),
+            ],
+          ),
+        ),
         body: tabs[currentIndex],
         bottomNavigationBar: CurvedNavigationBar(
           key: _bottomNavigationKey,
@@ -54,7 +128,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   }
 
-
   var tabs = [
     PlacesTab(),
     MapTab(),
@@ -63,67 +136,4 @@ class _HomeScreenState extends State<HomeScreen> {
     ArTourTab(),
 
   ];
-}
-class NavigationDrawer extends StatelessWidget
-{
-  @override
-  Widget build(BuildContext context) =>Drawer(
-    child: SingleChildScrollView(
-      child: Column(
-        children: [
-          buildHeader(context),
-          buildMenuItems(context),
-        ],
-      ),
-    ),
-  );
-
-  Widget buildHeader(BuildContext context)=> Container();
-
-  Widget buildMenuItems(BuildContext context)=> Column(
-    children: [
-      ListTile(
-        leading:Icon(Icons.home_outlined),
-        title: Text('Home'),
-        onTap: (){
-          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>PlacesTab()));
-        },
-      ),
-      ListTile(
-        leading:Icon(Icons.map),
-        title: Text('Map'),
-        onTap: (){
-          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>MapTab()));
-        },
-      ),
-      ListTile(
-        leading:Icon(Icons.qr_code_scanner),
-        title: Text('Scan Qr'),
-        onTap: (){
-          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>ScanScreen()));
-        },
-      ),
-      ListTile(
-        leading:Icon(Icons.find_in_page),
-        title: Text('Scan Photo'),
-        onTap: (){
-          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>MainOcr()));
-        },
-      ),
-      ListTile(
-        leading:Icon(Icons.place),
-        title: Text('Tour'),
-        onTap: (){
-          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>ArTourTab()));
-        },
-      ),
-      ListTile(
-        leading:Icon(Icons.logout,color: Colors.red,),
-        title: Text('Logout'),
-        onTap: (){
-          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>SignInScreen()));
-        },
-      ),
-    ],
-  );
 }
