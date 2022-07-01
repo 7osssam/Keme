@@ -46,37 +46,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child: Text('Drawer Header'),
               ),
+
               ListTile(
-                leading:Icon(Icons.home_outlined,color: Colors.white,),
-                title: Text('Home',style: TextStyle(color: Colors.white),),
-                onTap: (){
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomeScreen()));
-                },
-              ),
-              ListTile(
-                leading:Icon(Icons.map,color: Colors.white,),
-                title: Text('Map',style: TextStyle(color: Colors.white),),
-                onTap: (){
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomeScreen()));
-                },
-              ),
-              ListTile(
-                leading:Icon(Icons.qr_code_scanner,color: Colors.white,),
-                title: Text('Scan Qr',style: TextStyle(color: Colors.white),),
-                onTap: (){
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomeScreen()));
-                },
-              ),
-              ListTile(
-                leading:Icon(Icons.find_in_page,color: Colors.white,),
-                title: Text('Scan Photo',style: TextStyle(color: Colors.white),),
-                onTap: (){
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomeScreen()));
-                },
-              ),
-              ListTile(
-                leading:Icon(Icons.place,color: Colors.white,),
-                title: Text('Tour',style: TextStyle(color: Colors.white),),
+                leading:Icon(Icons.report_outlined,color: Colors.white,),
+                title: Text('Rebort Bugs',style: TextStyle(color: Colors.white),),
                 onTap: (){
                   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomeScreen()));
                 },
