@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'place_widget.dart';
 
-
 class PlacesTab extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SingleChildScrollView(
         child: Column(
           children: [
             Row(
               children: [
-                PlaceWidget("Must Museum", "6 October", "assets/images/Must Musuem.jpg"),
+                PlaceWidget("Must Museum", "6 October",
+                    "assets/images/Must Musuem.jpg"),
               ],
             ),
             Row(
@@ -23,22 +21,26 @@ class PlacesTab extends StatelessWidget {
             ),
             Row(
               children: [
-                PlaceWidget("Abu Simbel", "Upper Egypt, Aswan", "assets/images/Abu Simble.jpg"),
+                PlaceWidget("Abu Simbel", "Upper Egypt, Aswan",
+                    "assets/images/Abu Simble.jpg"),
               ],
             ),
             Row(
               children: [
-                PlaceWidget("Karnak Temple", "Upper Egypt, Luxor", "assets/images/Karnak Temple.jpg"),
+                PlaceWidget("Karnak Temple", "Upper Egypt, Luxor",
+                    "assets/images/Karnak Temple.jpg"),
               ],
             ),
             Row(
               children: [
-                PlaceWidget("Hatshepsut Temple", "Upper Egypt, Kings Valley Rd", "assets/images/Hatshepsut Temple.jpg"),
+                PlaceWidget("Hatshepsut Temple", "Upper Egypt, Kings Valley Rd",
+                    "assets/images/Hatshepsut Temple.jpg"),
               ],
             ),
             Row(
               children: [
-                PlaceWidget("The Baron Palace", "Cairo", "assets/images/The Baron Palace.jpg"),
+                PlaceWidget("The Baron Palace", "Cairo",
+                    "assets/images/The Baron Palace.jpg"),
               ],
             ),
           ],

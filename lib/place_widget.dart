@@ -14,7 +14,7 @@ class PlaceWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(6.0),
         child: Stack(
           alignment: Alignment.bottomLeft,
           children: [
