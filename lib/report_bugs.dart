@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ReportBugs extends StatelessWidget {
   static String routeName = 'Report Bugs';
+  void _contact() async {
+    final url = 'Kemeproject2022@gmail.com';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +34,50 @@ class ReportBugs extends StatelessWidget {
       height: 200,
       ),
       SizedBox(height: 30,),
+        TextField(
+          enableSuggestions: true,
+          autocorrect:true,
+          cursorColor: Colors.white,
+          style: TextStyle(color: Colors.white.withOpacity(0.9),fontSize: 16),
+          decoration: InputDecoration(
+            labelText: "Title",
+            labelStyle: TextStyle(color: Colors.white.withOpacity(0.9),fontSize: 16),
+            filled: true,
+            isDense: true,
+            floatingLabelBehavior: FloatingLabelBehavior.never,
+            fillColor: Colors.white.withOpacity(0.3),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30.0),
+                borderSide: const BorderSide(width: 0, style: BorderStyle.none)),
+          ),
+        ),
+        SizedBox(height: 20,),
+        TextField(
+          enableSuggestions: true,
+          autocorrect:true,
+          maxLines: 6,
+          cursorColor: Colors.white,
+          style: TextStyle(color: Colors.white.withOpacity(0.9),fontSize: 16),
+          decoration: InputDecoration(
 
-]
+            labelText: "Description",
+            labelStyle: TextStyle(color: Colors.white.withOpacity(0.9),fontSize: 16),
+            filled: true,
+            floatingLabelBehavior: FloatingLabelBehavior.never,
+            fillColor: Colors.white.withOpacity(0.3),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30.0),
+                borderSide: const BorderSide(width: 0, style: BorderStyle.none)),
+          ),
+        ),
+        SizedBox(height: 20,),
+        RaisedButton(
+          onPressed: (){_contact();},
+          child: Text('Send Mail'),
+        ),
+
+
+      ]
       ),
     ),
     ),
