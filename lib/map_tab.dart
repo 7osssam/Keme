@@ -78,8 +78,6 @@ class _MapTabState extends State<MapTab> {
       markers.add(hatshepsutTemple);
       markers.add(baronPalace);
     });
-
-
   }
 
   @override
