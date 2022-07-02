@@ -23,14 +23,21 @@ class _PlaceDetailsState extends State<PlaceDetails> {
         args.placeName,
         style: Theme.of(context).textTheme.subtitle1,
       )),
-      body: lines.length == 0
-          ? CircularProgressIndicator()
-          : ListView.builder(
-              itemBuilder: (_, index) {
-                return PlaceItem(lines[index]);
-              },
-              itemCount: lines.length,
-            ),
+      body: Container(decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(
+                'assets/images/back.jpg',
+              ),
+              fit: BoxFit.cover)),
+        child: lines.length == 0
+            ? CircularProgressIndicator()
+            : ListView.builder(
+                itemBuilder: (_, index) {
+                  return PlaceItem(lines[index]);
+                },
+                itemCount: lines.length,
+              ),
+      ),
     );
   }
 

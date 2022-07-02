@@ -1,14 +1,15 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:keme/place_360_degree.dart';
 import 'package:keme/place_details.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class PlaceWidget extends StatelessWidget {
   String Place;
   String Location;
   String ImagePath;
+  String Image360degree;
 
-  PlaceWidget(this.Place, this.Location, this.ImagePath);
+  PlaceWidget(this.Place, this.Location, this.ImagePath,this.Image360degree);
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +58,21 @@ class PlaceWidget extends StatelessWidget {
                 ),
               ),
             ),
+            Positioned(
+              right: 5,
+              bottom: 1,
+              child: IconButton(
+                icon: const ImageIcon(AssetImage('assets/images/360degree.png'),color: Colors.white,size: 30,),
 
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Place360Degree(Image360degree),
+                      ));
+                },
+              ),
+            ),
           ],
         ),
       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:keme/place_360_degree.dart';
 
 class PlaceItem extends StatelessWidget {
   String text;
@@ -16,21 +15,6 @@ class PlaceItem extends StatelessWidget {
             child: Text(
               text,
               style: Theme.of(context).textTheme.headline3,
-            ),
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.all(25),
-          child: ElevatedButton.icon(
-            onPressed: () {
-              Navigator.pushNamed(context, Place360Degree.routeName);
-            },
-            icon: Icon(
-              Icons.photo,
-            ),
-            label: Text("Show in vr mode"),
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.orangeAccent),
             ),
           ),
         ),

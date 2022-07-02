@@ -22,7 +22,7 @@ class MyThemeData {
       ),
       headline3: TextStyle(
         color: Colors.white,
-        fontSize: 20,
+        fontSize: 24,
       ),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(

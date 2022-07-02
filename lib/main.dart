@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:keme/my_theme.dart';
-import 'package:keme/place_360_degree.dart';
 import 'package:keme/place_details.dart';
 import 'package:keme/report_bugs.dart';
 import 'package:keme/reset_password.dart';
@@ -35,7 +34,6 @@ class MyApp extends StatelessWidget {
         PlaceDetails.routeName: (buildContext) => PlaceDetails(),
         ArTourTab.routeName: (buildContext) => ArTourTab(),
         ReportBugs.routeName: (buildContext) => ReportBugs(),
-        Place360Degree.routeName: (buildContext) => Place360Degree(),
       },
       theme: MyThemeData.DarkTheme,
     );
