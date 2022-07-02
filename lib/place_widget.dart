@@ -34,7 +34,7 @@ class PlaceWidget extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 30,
+              bottom: 35,
               left: 0,
               child: Container(
                 margin: EdgeInsets.all(8),
@@ -53,10 +53,11 @@ class PlaceWidget extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 4, horizontal: 10),
                 child: Text(
                   Place,
-                  style: TextStyle(color: Colors.white, fontSize: 26,fontFamily: 'Gilroy'),
+                  style: TextStyle(color: Colors.white, fontSize: 28,fontFamily: 'Gilroy'),
                 ),
               ),
             ),
+
           ],
         ),
       ),
