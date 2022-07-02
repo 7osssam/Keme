@@ -41,11 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Color(0xff212126),
           child: ListView(
             children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.orangeAccent,
-                ),
-                child: Text('Drawer Header'),
+               const DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Colors.orangeAccent,
+                  ),
+                  child: Text('Keme',style: TextStyle(color: Colors.white, fontSize: 26,fontFamily: 'Gilroy'),) ,
               ),
 
               ListTile(

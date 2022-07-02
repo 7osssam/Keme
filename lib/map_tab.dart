@@ -4,7 +4,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
 class MapTab extends StatefulWidget {
-
   @override
   State<MapTab> createState() => _MapTabState();
 }
@@ -24,6 +23,7 @@ class _MapTabState extends State<MapTab> {
   @override
   void initState() {
     super.initState();
+    intilize();
     getUserLocation();
     var userMarker = Marker(
       markerId: const MarkerId('user_location'),
@@ -31,6 +31,55 @@ class _MapTabState extends State<MapTab> {
           locationData?.latitude ?? defLat, locationData?.longitude ?? defLng),
     );
     markers.add(userMarker);
+  }
+
+  intilize() {
+    Marker mustMusuem = Marker(
+      markerId: MarkerId('Must Museum'),
+      position: LatLng(29.9938, 30.9650),
+      infoWindow: InfoWindow(title: 'Must Museum'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
+    );
+    Marker pyramids = Marker(
+      markerId: MarkerId('pyramids'),
+      position: LatLng(29.9792, 31.1342),
+      infoWindow: InfoWindow(title: 'pyramids'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
+    );
+    Marker abuSimbel = Marker(
+      markerId: MarkerId('Abu Simbel'),
+      position: LatLng(22.3372, 31.6258),
+      infoWindow: InfoWindow(title: 'Abu Simbel'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
+    );
+    Marker karnakTemple = Marker(
+      markerId: MarkerId('Karnak Temple'),
+      position: LatLng(25.7041, 32.6434),
+      infoWindow: InfoWindow(title: 'Karnak Temple'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
+    );
+    Marker hatshepsutTemple = Marker(
+      markerId: MarkerId('Hatshepsut Temple'),
+      position: LatLng(25.7383, 32.6065),
+      infoWindow: InfoWindow(title: 'Hatshepsut Temple'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
+    );
+    Marker baronPalace = Marker(
+      markerId: MarkerId('Baron Palace'),
+      position: LatLng(30.0867, 31.3303),
+      infoWindow: InfoWindow(title: 'Baron Palace'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
+    );
+    setState(() {
+      markers.add(mustMusuem);
+      markers.add(pyramids);
+      markers.add(abuSimbel);
+      markers.add(karnakTemple);
+      markers.add(hatshepsutTemple);
+      markers.add(baronPalace);
+    });
+
+
   }
 
   @override
@@ -50,6 +99,7 @@ class _MapTabState extends State<MapTab> {
       ),
     );
   }
+
   Location location = Location();
   LocationData? locationData;
 
