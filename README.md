@@ -23,7 +23,7 @@ Overall, this Flutter AR Navigation App with Stardust API is a powerful tool for
 
 
 ## Demo
-<img width="196" height="460" src="https://user-images.githubusercontent.com/46269045/221010337-c139f9ba-3cbf-4b90-89a5-18b998d2aae0.gif"> <img width="196" height="460" src="https://user-images.githubusercontent.com/46269045/221010379-d4a32f46-7aad-4836-a228-6d48be064b41.gif"> <img width="196" height="460" src="https://user-images.githubusercontent.com/46269045/221010269-7b321b95-96d4-461e-acdc-6b8b7d89cb72.gif"> <img width="196" height="460" src="https://user-images.githubusercontent.com/46269045/221012014-1d3f4ced-15bb-44c8-a2b0-70ce2bed6ce5.gif"> <img width="196" height="460" src="https://user-images.githubusercontent.com/46269045/221010306-4f6162eb-6239-4988-a500-efb3eb041281.gif">
+<img width="186" height="450" src="https://user-images.githubusercontent.com/46269045/221010337-c139f9ba-3cbf-4b90-89a5-18b998d2aae0.gif"> <img width="186" height="450" src="https://user-images.githubusercontent.com/46269045/221010379-d4a32f46-7aad-4836-a228-6d48be064b41.gif"> <img width="186" height="450" src="https://user-images.githubusercontent.com/46269045/221010269-7b321b95-96d4-461e-acdc-6b8b7d89cb72.gif"> <img width="186" height="450" src="https://user-images.githubusercontent.com/46269045/221012014-1d3f4ced-15bb-44c8-a2b0-70ce2bed6ce5.gif"> <img width="186" height="450" src="https://user-images.githubusercontent.com/46269045/221010306-4f6162eb-6239-4988-a500-efb3eb041281.gif">
 
 
 
