@@ -8,7 +8,7 @@ This is a Flutter-based mobile application that allows tourists to navigate and 
 
 The AR navigation feature enables tourists to easily navigate through museums and other points of interest by overlaying an interactive map on top of their device's camera view. The map displays key points of interest, such as exhibits or artifacts, and provides real-time directions to guide the tourist to their desired destination.
 
-The OCR translation feature enables tourists to easily translate text labels or descriptions of exhibits or artifacts into their preferred language. This feature uses the device's camera to scan the text and provides a real-time translation using the Google translate API.
+The OCR translation feature enables tourists to easily translate text labels or descriptions of exhibits or artifacts into their preferred language. This feature uses the device's camera to scan the text and provides a real-time translation using Google translate API.
 
 The QR code scanning feature enables tourists to quickly access additional information about exhibits or artifacts by scanning QR codes or barcodes on their labels. This feature uses the device's camera to scan the code and provides a real-time link to additional information, such as historical context or multimedia content.
 
