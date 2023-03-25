@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         PlaceDetails.routeName: (buildContext) => PlaceDetails(),
         ArTourTab.routeName: (buildContext) => ArTourTab(),
         ReportBugs.routeName: (buildContext) => ReportBugs(),
-      },
+      }, //test
       theme: MyThemeData.DarkTheme,
     );
   }
